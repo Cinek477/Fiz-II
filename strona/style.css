@@ -90,3 +90,10 @@ section{display:flex;flex-direction:column;gap:18px}
 @media (max-width:480px){.chart canvas{height:240px}}
 .btn.reset{flex:0 1 auto;margin:0 auto;font-size:.88rem;color:var(--muted);background:transparent}
 .btn.reset.armed{color:var(--again);border-color:var(--again)}
+/* animacja odwracania fiszki */
+.card{transform-origin:center;will-change:transform}
+.card.flip-out{animation:flipOut .17s ease-in forwards}
+.card.flip-in{animation:flipIn .18s ease-out}
+@keyframes flipOut{from{transform:perspective(900px) rotateY(0)}to{transform:perspective(900px) rotateY(90deg)}}
+@keyframes flipIn{from{transform:perspective(900px) rotateY(-90deg)}to{transform:perspective(900px) rotateY(0)}}
+@media (prefers-reduced-motion:reduce){.card.flip-out,.card.flip-in{animation:none}}

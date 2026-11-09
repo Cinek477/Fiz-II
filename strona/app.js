@@ -33,7 +33,16 @@ function mark(v){if(!order.length)return;const id=order[i];if(v)known[id]=1;else
   if(deck==="todo"&&v){order.splice(i,1);if(i>=order.length)i=0;flipped=false;render()}else go(1)}
 DECKS.forEach(([d,l])=>{const b=document.createElement("button");b.className="chip";b.type="button";b.dataset.d=d;b.textContent=l;
   b.onclick=()=>{deck=d;flipped=false;build()};$("decks").appendChild(b)});
-$("card").onclick=()=>{flipped=!flipped;render()};
+/* Odwracanie z animacją: karta „składa się” do krawędzi, podmienia treść i rozkłada z powrotem */
+let flipping=false;
+function flip(){
+  if(flipping)return;
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches){flipped=!flipped;render();return}
+  flipping=true;const c=$("card");c.classList.add("flip-out");
+  setTimeout(()=>{flipped=!flipped;render();c.classList.remove("flip-out");c.classList.add("flip-in");
+    setTimeout(()=>{c.classList.remove("flip-in");flipping=false},180)},170);
+}
+$("card").onclick=flip;
 $("next").onclick=()=>go(1);$("prev").onclick=()=>go(-1);
 let resetArmed=null;
 $("reset").onclick=()=>{const b=$("reset");
@@ -45,7 +54,7 @@ $("reset").onclick=()=>{const b=$("reset");
 $("good").onclick=()=>mark(true);$("again").onclick=()=>mark(false);
 $("shuffle").onclick=()=>{for(let k=order.length-1;k>0;k--){const j=Math.floor(Math.random()*(k+1));[order[k],order[j]]=[order[j],order[k]]}i=0;flipped=false;render()};
 document.addEventListener("keydown",e=>{if(view!=="fiszki")return;if(e.target.closest&&e.target.closest("button")&&e.key===" ")return;
-  if(e.key===" "){e.preventDefault();flipped=!flipped;render()}else if(e.key==="ArrowRight")go(1);else if(e.key==="ArrowLeft")go(-1);
+  if(e.key===" "){e.preventDefault();flip()}else if(e.key==="ArrowRight")go(1);else if(e.key==="ArrowLeft")go(-1);
   else if(e.key==="1")mark(false);else if(e.key==="2")mark(true)});
 build();
 
