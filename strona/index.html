@@ -1,0 +1,69 @@
+<title>Fizyka 2</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Plus+Jakarta+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="katex/katex.min.css">
+<link rel="stylesheet" href="style.css">
+
+<header class="top pad">
+  <div class="top-in">
+    <span class="brand">Fizyka 2</span>
+    <nav class="tabs" role="tablist">
+      <a class="tab" role="tab" href="#fiszki" data-v="fiszki">Fiszki</a>
+      <a class="tab" role="tab" href="#notatki" data-v="notatki">Notatki</a>
+      <a class="tab" role="tab" href="#wzory" data-v="wzory">Karta wzorów</a>
+      <a class="tab" role="tab" href="#wykresy" data-v="wykresy">Wykresy</a>
+    </nav>
+  </div>
+</header>
+
+<main class="pad">
+  <section id="v-fiszki">
+    <p class="sub">Kliknij kartę, żeby zobaczyć odpowiedź. Oznacz, czy umiesz.</p>
+    <div class="decks" id="decks"></div>
+    <div>
+      <div class="meta"><span id="pos"></span><span id="known"></span></div>
+      <div class="bar"><i id="prog"></i></div>
+    </div>
+    <button class="card" id="card" type="button" aria-live="polite">
+      <span class="tag" id="tag"></span>
+      <p class="q" id="q"></p>
+      <p class="a" id="a" hidden></p>
+      <span class="hint" id="hint">Kliknij, żeby odwrócić</span>
+    </button>
+    <div class="row">
+      <button class="btn again" id="again" type="button">✗ Powtórz</button>
+      <button class="btn good" id="good" type="button">✓ Umiem</button>
+    </div>
+    <div class="row">
+      <button class="btn" id="prev" type="button">← Poprzednia</button>
+      <button class="btn" id="shuffle" type="button">Przetasuj</button>
+      <button class="btn" id="next" type="button">Następna →</button>
+    </div>
+    <div class="row">
+      <button class="btn reset" id="reset" type="button">↺ Resetuj postęp</button>
+    </div>
+    <p class="keys">Spacja – odwróć · ← → – nawigacja · 1 – powtórz · 2 – umiem</p>
+  </section>
+
+  <section id="v-notatki" hidden>
+    <div class="decks" id="notesel"></div>
+    <article class="doc" id="notes"><p class="loading">Ładuję notatki…</p></article>
+  </section>
+
+  <section id="v-wzory" hidden>
+    <article class="doc" id="wzory"><p class="loading">Ładuję kartę wzorów…</p></article>
+  </section>
+
+  <section id="v-wykresy" hidden>
+    <p class="sub">Przesuwaj suwaki i patrz, jak zmienia się wykres. Krzywe są liczone wprost ze wzorów.</p>
+    <div id="charts" class="charts"></div>
+  </section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+<script src="cards.js"></script>
+<script src="charts.js"></script>
+<script src="app.js"></script>
