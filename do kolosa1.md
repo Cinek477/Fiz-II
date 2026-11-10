@@ -89,6 +89,14 @@ $$\color{royalblue} v = \frac{j}{ne} = \frac{10^{12}}{8{,}5\cdot10^{28}\cdot1{,}
 | Napięcie na cewce | $\color{purple}{U = -L\dfrac{dI}{dt}}$ | $U$ – napięcie [V], $\dfrac{dI}{dt}$ – jak szybko zmienia się prąd |
 
 ## 4. Cewka RL podłączona do $\varepsilon$
+
+> [!note] Oznaczenia
+> - $\varepsilon$ – SEM źródła [V]
+> - $I$ – prąd [A], $I(t)$ – prąd w chwili $t$
+> - $R$ – opór cewki [Ω], $L$ – indukcyjność cewki [H]
+> - $\dfrac{dI}{dt}$ – jak szybko zmienia się prąd
+> - $\tau$ – stała czasowa: po tym czasie prąd ma ok. 63% maksimum [s]
+
 Kirchhoff (suma napięć w oczku = 0):
 
 $$\color{royalblue} \varepsilon = IR + L\frac{dI}{dt}$$
@@ -131,13 +139,74 @@ xychart-beta
 
 ## 5. Typowe zadania na kolosa 1 – schematy
 
-- **Źródło + $\color{crimson}{R_z}$:** $\color{crimson}{V = \varepsilon - Ir}$ (prosta malejąca), $\color{crimson}{P = \dfrac{\varepsilon^2 R_z}{(R_z+r)^2}}$, max dla $\color{crimson}{R_z = r}$.
-- **Dryf w drucie:** $\color{crimson}{E = \dfrac{U}{l}}$ → $\color{crimson}{v = \mu E}$ albo $\color{crimson}{v = \dfrac{I}{neS}}$; prąd przemienny $\color{crimson}{v_0 = \sqrt2\,v_{sk}}$; droga w pół okresu $\color{crimson}{s = \dfrac{2v_0}{\omega}}$.
-- **Płytka/drut:** $\color{crimson}{R = \rho\dfrac{l}{S}}$, $\color{crimson}{U = j\rho l}$, $\color{crimson}{n = \dfrac{\rho_m N_A}{M}}$, $\color{crimson}{v = \dfrac{j}{ne}}$.
-- **Hallotron:** $\color{crimson}{v = \dfrac{I}{neS}}$, $\color{crimson}{F = evB}$, $\color{crimson}{\mu = \dfrac{\sigma}{ne}}$, $\color{crimson}{U_H = \dfrac{IB}{ned}}$ – półprzewodnik, bo małe $\color{crimson}{n}$ → duże $\color{crimson}{U_H}$.
-- **Pętla kompensuje pole Ziemi:** $\color{crimson}{I = \dfrac{2RB}{\mu_0}}$ ($\color{crimson}{B \approx 50\,\mu\text{T}}$ → ok. $\color{crimson}{16\,\text{A}}$ dla $\color{crimson}{R = 20\,\text{cm}}$).
-- **Wirująca ramka:** $\color{crimson}{\varepsilon_0 = BA\omega}$, $\color{crimson}{R = \rho\dfrac{4a}{S}}$, $\color{crimson}{I_0 = \dfrac{\varepsilon_0}{R}}$, $\color{crimson}{\bar P = \dfrac{\varepsilon_0^2}{2R}}$.
-- **Solenoid z Ampère'a:** $\color{crimson}{\oint \vec B\cdot d\vec l = \mu_0 I}$ → $\color{crimson}{BD = \mu_0 NI}$ → $\color{crimson}{B = \dfrac{\mu_0 NI}{D}}$, $\color{crimson}{\Phi = NBS}$, $\color{crimson}{L = \dfrac{\mu_0 N^2 S}{D}}$, $\color{crimson}{U = -LI_0\omega\cos\omega t}$.
+Każde zadanie robisz krok po kroku, od góry tabeli w dół. Jeden wiersz to jeden wzór.
+
+### Źródło z oporem wewnętrznym + zmienny rezystor
+
+| Krok | Wzór | Oznaczenia |
+|---|---|---|
+| 1. Napięcie na obciążeniu | $\color{crimson}{V = \varepsilon - Ir}$ | $V$ – napięcie na obciążeniu [V], $\varepsilon$ – SEM [V], $I$ – prąd [A], $r$ – opór wewnętrzny [Ω] |
+| 2. Moc na obciążeniu | $\color{crimson}{P = \dfrac{\varepsilon^2 R_z}{(R_z+r)^2}}$ | $P$ – moc [W], $R_z$ – opór obciążenia [Ω] |
+| 3. Kiedy moc największa | $\color{crimson}{R_z = r}$ | opór obciążenia równy oporowi wewnętrznemu |
+| 4. Moc maksymalna | $\color{crimson}{P_{max} = \dfrac{\varepsilon^2}{4r}}$ | $P_{max}$ – największa moc [W] |
+
+### Prędkość dryfu elektronów w drucie
+
+| Krok | Wzór | Oznaczenia |
+|---|---|---|
+| 1. Pole w drucie | $\color{crimson}{E = \dfrac{U}{l}}$ | $E$ – pole elektryczne [V/m], $U$ – napięcie [V], $l$ – długość drutu [m] |
+| 2. Prędkość dryfu | $\color{crimson}{v = \mu E}$ | $v$ – prędkość dryfu [m/s], $\mu$ – ruchliwość [m²/(V·s)] |
+| 2. (inaczej) Prędkość z prądu | $\color{crimson}{v = \dfrac{I}{neS}}$ | $I$ – prąd [A], $n$ – elektrony w m³, $e$ – ładunek [C], $S$ – przekrój [m²] |
+| 3. Amplituda prędkości | $\color{crimson}{v_0 = \sqrt2\,v_{sk}}$ | $v_0$ – największa prędkość, $v_{sk}$ – prędkość „skuteczna” |
+| 4. Droga w pół okresu | $\color{crimson}{s = \dfrac{2v_0}{\omega}}$ | $s$ – droga [m], $\omega = 2\pi f$ – częstość kołowa [rad/s] |
+
+### Płytka / drut (jak zadanie z kolosa)
+
+| Krok | Wzór | Oznaczenia |
+|---|---|---|
+| 1. Opór | $\color{crimson}{R = \rho\dfrac{l}{S}}$ | $R$ – opór [Ω], $\rho$ – rezystywność [Ω·m], $l$ – długość [m], $S$ – przekrój ⟂ do prądu [m²] |
+| 2. Napięcie z gęstości prądu | $\color{crimson}{U = j\rho l}$ | $U$ – napięcie [V], $j$ – gęstość prądu [A/m²] |
+| 3. Elektrony w m³ | $\color{crimson}{n = \dfrac{\rho_m N_A}{M}}$ | $n$ – liczba elektronów w m³, $\rho_m$ – gęstość [kg/m³], $N_A$ – liczba Avogadra, $M$ – masa molowa [kg/mol] |
+| 4. Prędkość dryfu | $\color{crimson}{v = \dfrac{j}{ne}}$ | $v$ – prędkość dryfu [m/s], $e$ – ładunek elementarny [C] |
+
+### Hallotron
+
+| Krok | Wzór | Oznaczenia |
+|---|---|---|
+| 1. Prędkość nośników | $\color{crimson}{v = \dfrac{I}{neS}}$ | $v$ – prędkość [m/s], $I$ – prąd [A], $n$ – nośniki w m³, $S$ – przekrój [m²] |
+| 2. Siła Lorentza | $\color{crimson}{F = evB}$ | $F$ – siła na jeden nośnik [N], $B$ – indukcja [T] |
+| 3. Ruchliwość | $\color{crimson}{\mu = \dfrac{\sigma}{ne}}$ | $\mu$ – ruchliwość [m²/(V·s)], $\sigma$ – przewodność [S/m] |
+| 4. Napięcie Halla | $\color{crimson}{U_H = \dfrac{IB}{ned}}$ | $U_H$ – napięcie Halla [V], $d$ – grubość płytki [m] |
+
+> [!tip]
+> Hallotrony robi się z półprzewodników, bo mają małe $n$, a małe $n$ daje duże $U_H$.
+
+### Pętla kompensuje pole Ziemi
+
+| Krok | Wzór | Oznaczenia |
+|---|---|---|
+| 1. Pole w środku pętli | $\color{crimson}{B = \dfrac{\mu_0 I}{2R}}$ | $B$ – indukcja [T], $\mu_0$ – stała, $I$ – prąd [A], $R$ – promień pętli [m] |
+| 2. Potrzebny prąd | $\color{crimson}{I = \dfrac{2RB}{\mu_0}}$ | $B \approx 50\,\mu\text{T}$ (pole Ziemi); dla $R = 20\,\text{cm}$ wychodzi ok. $16\,\text{A}$ |
+
+### Wirująca ramka
+
+| Krok | Wzór | Oznaczenia |
+|---|---|---|
+| 1. Amplituda SEM | $\color{crimson}{\varepsilon_0 = BA\omega}$ | $\varepsilon_0$ – największa SEM [V], $B$ – indukcja [T], $A$ – pole ramki [m²], $\omega$ – prędkość kątowa [rad/s] |
+| 2. Opór ramki | $\color{crimson}{R = \rho\dfrac{4a}{S}}$ | $R$ – opór [Ω], $\rho$ – rezystywność, $a$ – bok ramki [m], $S$ – przekrój drutu [m²] |
+| 3. Prąd maksymalny | $\color{crimson}{I_0 = \dfrac{\varepsilon_0}{R}}$ | $I_0$ – największy prąd [A] |
+| 4. Średnia moc | $\color{crimson}{\bar P = \dfrac{\varepsilon_0^2}{2R}}$ | $\bar P$ – średnia moc cieplna [W] |
+
+### Solenoid z prawa Ampère'a
+
+| Krok | Wzór | Oznaczenia |
+|---|---|---|
+| 1. Prawo Ampère'a | $\color{crimson}{\oint \vec B\cdot d\vec l = \mu_0 I}$ | suma pola wzdłuż zamkniętej pętli, $I$ – prąd przez pętlę |
+| 2. Dla pętli prostokątnej | $\color{crimson}{BD = \mu_0 NI}$ | $D$ – długość cewki [m], $N$ – liczba zwojów |
+| 3. Pole w cewce | $\color{crimson}{B = \dfrac{\mu_0 NI}{D}}$ | $B$ – indukcja w środku cewki [T] |
+| 4. Strumień | $\color{crimson}{\Phi = NBS}$ | $\Phi$ – strumień przez wszystkie zwoje [Wb], $S$ – przekrój cewki [m²] |
+| 5. Indukcyjność | $\color{crimson}{L = \dfrac{\mu_0 N^2 S}{D}}$ | $L$ – indukcyjność [H] |
+| 6. Napięcie indukowane | $\color{crimson}{U = -LI_0\omega\cos\omega t}$ | $U$ – napięcie [V], $I_0$ – amplituda prądu, $\omega$ – częstość kołowa |
 
 ## 6. Stałe
 $\color{gray}{e = 1{,}6\cdot10^{-19}\,\text{C}}$, $\color{gray}{N_A = 6{,}02\cdot10^{23}\,\text{mol}^{-1}}$, $\color{gray}{\mu_0 = 4\pi\cdot10^{-7}\,\text{H/m}}$
