@@ -16,6 +16,16 @@
 ---
 
 ## Prąd elektryczny
+
+> [!note] Oznaczenia
+> - $R$ – opór [Ω], $\rho$ – rezystywność [Ω·m], $\sigma$ – przewodność [S/m]
+> - $l$ – długość [m], $S$ – pole przekroju [m²]
+> - $I$ – prąd [A], $j$ – gęstość prądu [A/m²], $U$ – napięcie [V]
+> - $n$ – koncentracja nośników [m⁻³], $e$ – ładunek elementarny [C]
+> - $v$ – prędkość dryfu [m/s], $\mu$ – ruchliwość [m²/(V·s)], $E$ – pole elektryczne [V/m]
+> - $\varepsilon$ – SEM źródła [V], $r$ – opór wewnętrzny [Ω], $V$ – napięcie na obciążeniu [V]
+> - $P$ – moc [W], $U_0$ – amplituda, $U_{sk}$ – wartość skuteczna, $f$ – częstotliwość [Hz]
+
 | Co | Wzór |
 |---|---|
 | Opór drutu | $\color{royalblue}{R = \rho\dfrac{l}{S}}$ |
@@ -29,6 +39,16 @@
 | Średnia z $\color{royalblue}{\sin^2}$ | $\color{royalblue}{\tfrac12}$ |
 
 ## Magnetyzm
+
+> [!note] Oznaczenia
+> - $F$ – siła [N], $q$ – ładunek [C], $v$ – prędkość [m/s], $B$ – indukcja [T]
+> - $U_H$ – napięcie Halla [V], $d$ – grubość płytki [m]
+> - $\mu_0$ – przenikalność magnetyczna próżni, $dl$ – kawałek drutu, $\alpha$ – kąt
+> - $R$ – promień pętli [m], $r$ – odległość od drutu [m]
+> - $N$ – liczba zwojów, $l$ – długość cewki [m], $S$ – przekrój [m²]
+> - $\Phi$ – strumień [Wb], $L$ – indukcyjność [H], $\varepsilon$ – SEM [V]
+> - $A$ – pole ramki [m²], $\omega$ – prędkość kątowa [rad/s]
+
 | Co | Wzór |
 |---|---|
 | Siła Lorentza | $\color{purple}{\vec F = q\,\vec v\times\vec B\quad (F = qvB)}$ |
@@ -46,6 +66,12 @@
 | Energia cewki | $\color{purple}{E = \tfrac12 L I^2}$ |
 
 ## Kondensator
+
+> [!note] Oznaczenia
+> - $C$ – pojemność [F], $q$ – ładunek [C], $U$ – napięcie [V]
+> - $\varepsilon_0$ – przenikalność próżni, $\varepsilon_r$ – przenikalność względna izolatora
+> - $S$ – pole okładki [m²], $d$ – odległość okładek [m], $E$ – energia [J]
+
 | Co | Wzór |
 |---|---|
 | Płaski | $\color{teal}{C = \dfrac{\varepsilon_0\varepsilon_r S}{d}}$ |
@@ -53,6 +79,15 @@
 | Energia | $\color{teal}{E = \dfrac{q^2}{2C} = \tfrac12 CU^2}$ |
 
 ## Obwody (II prawo Kirchhoffa: suma napięć w oczku = 0)
+
+> [!note] Oznaczenia
+> - $q$ – ładunek [C], $\dot q$ – prąd, $\ddot q$ – druga pochodna ładunku
+> - $R$ – opór [Ω], $L$ – indukcyjność [H], $C$ – pojemność [F]
+> - $\tau$ – stała czasowa [s], $\beta$ – współczynnik tłumienia [1/s]
+> - $\omega_0$ – częstość własna [rad/s], $\omega$ – częstość drgań tłumionych
+> - $\Omega$ – częstość źródła [rad/s], $U_0$ – amplituda napięcia źródła [V]
+> - $Z$ – impedancja [Ω], $\varphi$ – przesunięcie fazowe, $X_L, X_C$ – reaktancje cewki i kondensatora [Ω]
+
 | Obwód | Równanie | Rozwiązanie |
 |---|---|---|
 | RL + $\color{green}{\varepsilon}$ | $\color{green}{\varepsilon = IR + L\dfrac{dI}{dt}}$ | $\color{green}{I = \dfrac{\varepsilon}{R}\left(1 - e^{-t/\tau}\right),\ \tau = \dfrac{L}{R}}$ |
@@ -73,6 +108,14 @@ $$\color{royalblue} Z = \sqrt{R^2 + \left(\Omega L - \frac{1}{\Omega C}\right)^2
 ---
 
 ## Fale
+
+> [!note] Oznaczenia
+> - $E_0$ – amplituda [V/m], $k$ – liczba falowa [m⁻¹]
+> - $\lambda$ – długość fali [m], $T$ – okres [s], $f$ – częstotliwość [Hz], $\omega$ – częstość kołowa
+> - $v$ – prędkość fali, $c$ – prędkość światła [m/s]
+> - $\varepsilon_r, \mu_r$ – przenikalności względne ośrodka
+> - $\nabla^2$ – laplasjan, $\vec S$ – wektor Poyntinga [W/m²]
+
 | Co | Wzór |
 |---|---|
 | Fala | $\color{crimson}{E = E_0\sin(kx - \omega t)}$ |
@@ -86,6 +129,12 @@ $$\color{royalblue} Z = \sqrt{R^2 + \left(\Omega L - \frac{1}{\Omega C}\right)^2
 | Wektor Poyntinga | $\color{crimson}{\vec S = \dfrac{1}{\mu_0}\vec E\times\vec B}$ (w kierunku ruchu fali, $\color{crimson}{\sim E_0^2}$) |
 
 ## Pole kuli (Gauss), ładunek $\rho$, promień $R$
+
+> [!note] Oznaczenia
+> - $\rho$ – gęstość objętościowa ładunku [C/m³], $R$ – promień kuli [m]
+> - $r$ – odległość od środka [m], $E_r$ – składowa radialna pola
+> - $\nabla\cdot$ – dywergencja (źródła pola), $\nabla\times$ – rotacja (wiry pola)
+
 | Gdzie | $\color{darkorange}{E(r)}$ | $\color{darkorange}{\nabla\cdot\vec E}$ | $\color{darkorange}{\nabla\times\vec E}$ |
 |---|---|---|---|
 | $\color{darkorange}{r < R}$ | $\color{darkorange}{\dfrac{\rho r}{3\varepsilon_0}}$ | $\color{darkorange}{\dfrac{\rho}{\varepsilon_0}}$ | $\color{darkorange}{0}$ |
@@ -97,6 +146,13 @@ $$\color{royalblue} \nabla\cdot\vec E = \frac{1}{r^2}\frac{\partial}{\partial r}
 ---
 
 ## Równania Maxwella
+
+> [!note] Oznaczenia
+> - $\vec E, \vec B$ – pole elektryczne [V/m] i magnetyczne [T]
+> - $\rho$ – gęstość ładunku [C/m³], $\vec j$ – gęstość prądu [A/m²]
+> - $\Phi_E, \Phi_B$ – strumienie pól, $I_p$ – prąd przesunięcia [A]
+> - $d\vec S$ – kawałek powierzchni, $d\vec l$ – kawałek krzywej
+
 | | Całkowa | Różniczkowa |
 |---|---|---|
 | I | $\color{mediumvioletred}{\oint \vec E\cdot d\vec S = \dfrac{Q}{\varepsilon_0}}$ | $\color{mediumvioletred}{\nabla\cdot\vec E = \dfrac{\rho}{\varepsilon_0}}$ |

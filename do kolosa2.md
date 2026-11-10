@@ -11,6 +11,17 @@
 
 ## 1. Obwód LC (bez oporu)
 
+> [!note] Oznaczenia
+> - $L$ – indukcyjność cewki [H], $C$ – pojemność kondensatora [F]
+> - $q$ – ładunek na kondensatorze [C], $q_0$ – ładunek na początku
+> - $I = \dot q$ – prąd (pochodna ładunku po czasie) [A], $\ddot q$ – druga pochodna ładunku
+> - $\omega_0$ – częstość kołowa drgań własnych [rad/s], $f$ – częstotliwość [Hz]
+> - $N$ – liczba zwojów, $l$ – długość cewki [m], $S$ – pole przekroju / okładki [m²]
+> - $d$ – odległość okładek kondensatora [m]
+> - $\varepsilon_0$ – przenikalność elektryczna próżni, $\varepsilon_r$ – przenikalność względna izolatora
+> - $\mu_0$ – przenikalność magnetyczna próżni
+
+
 Kirchhoff: napięcie na cewce + napięcie na kondensatorze = 0, a $\color{teal}{I = \dot q}$:
 
 $$\color{royalblue} L\ddot q + \frac{q}{C} = 0 \;\Rightarrow\; \ddot q + \frac{1}{LC}q = 0$$
@@ -32,6 +43,15 @@ $$\color{royalblue} L = \frac{\mu_0 N^2 S}{l},\qquad C = \frac{\varepsilon_0\var
 ---
 
 ## 2. Obwód RLC (gasnące drgania)
+
+> [!note] Oznaczenia
+> - $R$ – opór [Ω], $L$ – indukcyjność [H], $C$ – pojemność [F]
+> - $\beta = R/(2L)$ – współczynnik tłumienia: jak szybko drgania gasną [1/s]
+> - $\omega_0 = 1/\sqrt{LC}$ – częstość drgań bez oporu [rad/s]
+> - $\omega$ – częstość drgań tłumionych [rad/s]
+> - $\lambda$ – pierwiastki równania charakterystycznego
+> - $A, B$ – stałe zależne od warunków początkowych
+
 
 $$\color{royalblue} L\ddot q + R\dot q + \frac{q}{C} = 0 \;\Rightarrow\; \ddot q + 2\beta\dot q + \omega_0^2 q = 0,\qquad \beta = \frac{R}{2L}$$
 
@@ -56,6 +76,15 @@ xychart-beta
 
 ## 3. RLC z wymuszeniem (zadanie z symulacją)
 
+> [!note] Oznaczenia
+> - $U_0$ – amplituda napięcia źródła [V]
+> - $\Omega$ – częstość kołowa źródła [rad/s]
+> - $Z$ – impedancja, czyli „opór zastępczy” obwodu [Ω]
+> - $I_0$ – amplituda prądu po ustabilizowaniu [A]
+> - $\varphi$ – przesunięcie fazowe prądu względem napięcia
+> - $\Delta t$ – krok czasu w symulacji [s]
+
+
 $$\color{royalblue} L\frac{dI}{dt} + RI + \frac{q}{C} = U_0\sin(\Omega t)$$
 
 Po ustabilizowaniu prąd drga z częstotliwością **źródła**:
@@ -73,6 +102,14 @@ $$\color{royalblue} \boxed{\color{orange}I_0 = \frac{U_0}{Z},\quad Z = \sqrt{R^2
 
 ## 4. Fala: $E = E_0\sin(kx - \omega t)$
 
+> [!note] Oznaczenia
+> - $E_0$ – amplituda pola elektrycznego [V/m]
+> - $k$ – liczba falowa [m⁻¹], $x$ – położenie [m], $t$ – czas [s]
+> - $\lambda$ – długość fali [m], $T$ – okres [s]
+> - $\omega$ – częstość kołowa [rad/s], $c$ – prędkość światła [m/s]
+> - $\Delta x$ – przesunięcie odpowiadające zmianie fazy [m]
+
+
 | Wielkość | Wzór | Dla $k = 10^{10}\,\text{m}^{-1}$ |
 |---|---|---|
 | długość fali | $\color{crimson}{\lambda = 2\pi/k}$ | $\color{orange}{0{,}63\,\text{nm}}$ |
@@ -83,6 +120,14 @@ $$\color{royalblue} \boxed{\color{orange}I_0 = \frac{U_0}{Z},\quad Z = \sqrt{R^2
 ---
 
 ## 5. Pole naładowanej kuli (prawo Gaussa)
+
+> [!note] Oznaczenia
+> - $\rho$ – gęstość objętościowa ładunku [C/m³]
+> - $R$ – promień kuli [m], $r$ – odległość od środka [m]
+> - $Q_{wewn}$ – ładunek wewnątrz sfery Gaussa [C]
+> - $E$ – natężenie pola [V/m], $E_r$ – jego składowa radialna
+> - $\nabla\cdot\vec E$ – dywergencja (czy są źródła), $\nabla\times\vec E$ – rotacja (czy pole wiruje)
+
 
 $$\color{royalblue} \oint \vec E\cdot d\vec S = \frac{Q_{wewn}}{\varepsilon_0} \;\Rightarrow\; E\cdot4\pi r^2 = \frac{Q_{wewn}}{\varepsilon_0}$$
 
@@ -111,6 +156,15 @@ xychart-beta
 
 ## 6. Równania Maxwella
 
+> [!note] Oznaczenia
+> - $\vec E$ – pole elektryczne [V/m], $\vec B$ – pole magnetyczne [T]
+> - $\rho$ – gęstość ładunku [C/m³], $\vec j$ – gęstość prądu [A/m²]
+> - $Q$ – ładunek [C], $I$ – prąd [A]
+> - $\Phi_E, \Phi_B$ – strumienie pola elektrycznego i magnetycznego
+> - $d\vec S$ – kawałek powierzchni, $d\vec l$ – kawałek krzywej
+> - $\varepsilon_0, \mu_0$ – stałe próżni
+
+
 | | Całkowa | Różniczkowa | Po ludzku |
 |---|---|---|---|
 | I | $\color{mediumvioletred}{\oint \vec E\cdot d\vec S = \dfrac{Q}{\varepsilon_0}}$ | $\color{mediumvioletred}{\nabla\cdot\vec E = \dfrac{\rho}{\varepsilon_0}}$ | ładunki są źródłem $E$ |
@@ -128,6 +182,12 @@ xychart-beta
 
 ## 7. Równanie falowe – wyprowadzenie w 3 krokach
 
+> [!note] Oznaczenia
+> - $\nabla\times$ – rotacja, $\nabla\cdot$ – dywergencja
+> - $\nabla^2$ – laplasjan: suma drugich pochodnych po $x, y, z$
+> - $v$ – prędkość fali [m/s], $c$ – prędkość światła [m/s]
+
+
 Tożsamość: $\color{green}{\nabla\times(\nabla\times\vec E) = \nabla(\nabla\cdot\vec E) - \nabla^2\vec E}$
 
 1. Rotacja z III równania: $\color{green}{\nabla\times(\nabla\times\vec E) = -\frac{\partial}{\partial t}(\nabla\times\vec B)}$
@@ -140,6 +200,13 @@ $$\color{royalblue} \boxed{\color{orange}\nabla^2\vec E = \mu_0\varepsilon_0\fra
 
 ## 8. Sprawdzenie fali $\vec E = \hat j E_0\sin(\omega t - kx)$
 
+> [!note] Oznaczenia
+> - $\hat j$ – wektor jednostkowy osi $y$
+> - $E_0$ – amplituda, $\omega$ – częstość kołowa, $k$ – liczba falowa
+> - $v = \omega/k$ – prędkość fali [m/s]
+> - $\varepsilon_r, \mu_r$ – przenikalności względne ośrodka
+
+
 $$\color{royalblue} \frac{\partial^2 E}{\partial x^2} = -k^2 E,\qquad \frac{\partial^2 E}{\partial t^2} = -\omega^2 E \;\Rightarrow\; k^2 = \mu_0\varepsilon_0\omega^2$$
 
 > [!success] Wniosek
@@ -148,6 +215,13 @@ $$\color{royalblue} \frac{\partial^2 E}{\partial x^2} = -k^2 E,\qquad \frac{\par
 ---
 
 ## 9. Pole $B$ tej fali i $\vec E\times\vec B$
+
+> [!note] Oznaczenia
+> - $\hat i, \hat j, \hat k$ – wektory jednostkowe osi $x, y, z$
+> - $E_y$ – składowa pola elektrycznego, $B_z$ – składowa pola magnetycznego
+> - $B_0 = E_0/c$ – amplituda pola magnetycznego [T]
+> - $\vec S$ – wektor Poyntinga: energia niesiona przez 1 m² w 1 s [W/m²]
+
 
 Z prawa Faradaya: $\color{green}{(\nabla\times\vec E)_z = \frac{\partial E_y}{\partial x} = -kE_0\cos(\omega t - kx) = -\frac{\partial B_z}{\partial t}}$
 
