@@ -59,36 +59,43 @@ $$\color{royalblue} v = \frac{j}{ne} = \frac{10^{12}}{8{,}5\cdot10^{28}\cdot1{,}
 
 ## 2. Prąd – wzory
 
-| Co | Wzór |
-|---|---|
-| Opór | $\color{royalblue}{R = \rho\dfrac{l}{S}}$ ($\color{royalblue}{S}$ – przekrój ⟂ do prądu!) |
-| Gęstość prądu | $\color{royalblue}{j = \dfrac{I}{S} = nev}$ |
-| Ohm lokalnie | $\color{royalblue}{j = \sigma E,\quad \sigma = \dfrac{1}{\rho},\quad E = \dfrac{U}{l}}$ |
-| Ruchliwość | $\color{royalblue}{v = \mu E,\quad \sigma = ne\mu}$ |
-| Koncentracja | $\color{royalblue}{n = \dfrac{\rho_m N_A}{M}}$ (× liczba elektronów na atom) |
-| Źródło z oporem $\color{royalblue}{r}$ | $\color{royalblue}{U = \varepsilon - Ir}$ |
-| Moc max | dla $\color{royalblue}{R = r}$: $\color{royalblue}{P_{max} = \dfrac{\varepsilon^2}{4r}}$ |
-| Prąd przemienny | $\color{royalblue}{U_0 = \sqrt2\,U_{sk}}$ |
+| Co | Wzór | Oznaczenia |
+|---|---|---|
+| Opór drutu | $\color{royalblue}{R = \rho\dfrac{l}{S}}$ | $R$ – opór [Ω], $\rho$ – rezystywność [Ω·m], $l$ – długość [m], $S$ – przekrój [m²] |
+| Gęstość prądu | $\color{royalblue}{j = \dfrac{I}{S}}$ | $j$ – gęstość prądu, czyli prąd na 1 m² przekroju [A/m²] |
+| Gęstość prądu przez nośniki | $\color{royalblue}{j = nev}$ | $n$ – koncentracja, $e$ – ładunek, $v$ – prędkość dryfu |
+| Prawo Ohma lokalnie | $\color{royalblue}{j = \sigma E}$ | $\sigma$ – przewodność, $E$ – pole elektryczne w przewodniku [V/m] |
+| Pole w drucie | $\color{royalblue}{E = \dfrac{U}{l}}$ | $E$ – pole elektryczne [V/m], $U$ – napięcie [V], $l$ – długość [m] |
+| Przewodność | $\color{royalblue}{\sigma = \dfrac{1}{\rho}}$ | $\sigma$ – przewodność [S/m], odwrotność rezystywności $\rho$ |
+| Prędkość dryfu | $\color{royalblue}{v = \mu E}$ | $v$ – prędkość dryfu [m/s], $\mu$ – ruchliwość, $E$ – pole elektryczne |
+| Przewodność przez nośniki | $\color{royalblue}{\sigma = ne\mu}$ | $n$ – koncentracja nośników [m⁻³], $e$ – ładunek elementarny [C], $\mu$ – ruchliwość [m²/(V·s)] |
+| Koncentracja elektronów | $\color{royalblue}{n = \dfrac{\rho_m N_A}{M}}$ | $\rho_m$ – gęstość [kg/m³], $N_A$ – liczba Avogadra, $M$ – masa molowa [kg/mol] (1 elektron na atom) |
+| Napięcie źródła z oporem wewn. | $\color{royalblue}{V = \varepsilon - Ir}$ | $V$ – napięcie na obciążeniu [V], $\varepsilon$ – SEM [V], $I$ – prąd, $r$ – opór wewnętrzny [Ω] |
+| Moc maksymalna (gdy $R = r$) | $\color{royalblue}{P_{max} = \dfrac{\varepsilon^2}{4r}}$ | $P_{max}$ – największa moc, jaką da źródło [W] |
+| Amplituda a wartość skuteczna | $\color{royalblue}{U_0 = \sqrt2\,U_{sk}}$ | $U_0$ – amplituda (wartość szczytowa), $U_{sk}$ – wartość skuteczna (np. 230 V w gniazdku) |
 
 ## 3. Magnetyzm
 
-| Co | Wzór |
-|---|---|
-| Siła Lorentza | $\color{purple}{F = qvB}$ |
-| Napięcie Halla | $\color{purple}{U_H = \dfrac{IB}{ned}}$ |
-| Pętla (środek) | $\color{purple}{B = \dfrac{\mu_0 I}{2R}}$ |
-| Prosty drut | $\color{purple}{B = \dfrac{\mu_0 I}{2\pi r}}$ |
-| Solenoid | $\color{purple}{B = \dfrac{\mu_0 N I}{l},\quad L = \dfrac{\mu_0 N^2 S}{l}}$ |
-| Faraday | $\color{purple}{\varepsilon = -\dfrac{d\Phi}{dt}}$ |
-| Ramka | $\color{purple}{\varepsilon_0 = BA\omega}$ |
-| Cewka | $\color{purple}{U = -L\dfrac{dI}{dt}}$ |
+| Co | Wzór | Oznaczenia |
+|---|---|---|
+| Siła Lorentza | $\color{purple}{F = qvB}$ | $F$ – siła [N], $q$ – ładunek [C], $v$ – prędkość [m/s], $B$ – indukcja [T] |
+| Napięcie Halla | $\color{purple}{U_H = \dfrac{IB}{ned}}$ | $U_H$ – napięcie Halla [V], $I$ – prąd, $B$ – indukcja, $n$ – koncentracja, $d$ – grubość płytki (wzdłuż $B$) |
+| Pole w środku pętli | $\color{purple}{B = \dfrac{\mu_0 I}{2R}}$ | $B$ – indukcja [T], $I$ – prąd [A], $R$ – promień pętli [m] |
+| Pole prostego drutu | $\color{purple}{B = \dfrac{\mu_0 I}{2\pi r}}$ | $r$ – odległość od drutu [m], $I$ – prąd |
+| Pole w solenoidzie | $\color{purple}{B = \dfrac{\mu_0 N I}{l}}$ | $N$ – liczba zwojów, $l$ – długość cewki [m], $I$ – prąd |
+| Indukcyjność solenoidu | $\color{purple}{L = \dfrac{\mu_0 N^2 S}{l}}$ | $L$ – indukcyjność [H], $N$ – zwoje, $S$ – przekrój, $l$ – długość |
+| Prawo Faradaya | $\color{purple}{\varepsilon = -\dfrac{d\Phi}{dt}}$ | $\varepsilon$ – SEM indukowana [V]: zmiana strumienia w czasie daje napięcie |
+| Amplituda SEM ramki | $\color{purple}{\varepsilon_0 = BA\omega}$ | $\varepsilon_0$ – największa wartość SEM |
+| Napięcie na cewce | $\color{purple}{U = -L\dfrac{dI}{dt}}$ | $U$ – napięcie [V], $\dfrac{dI}{dt}$ – jak szybko zmienia się prąd |
 
 ## 4. Cewka RL podłączona do $\varepsilon$
 Kirchhoff (suma napięć w oczku = 0):
 
 $$\color{royalblue} \varepsilon = IR + L\frac{dI}{dt}$$
 
-$$\color{royalblue} I(t) = \frac{\varepsilon}{R}\left(1 - e^{-t/\tau}\right),\qquad \tau = \frac{L}{R}$$
+$$\color{royalblue} I(t) = \frac{\varepsilon}{R}\left(1 - e^{-t/\tau}\right)$$
+
+$$\color{royalblue} \tau = \frac{L}{R}$$
 
 > [!tip]
 > Prąd rośnie od 0 do $\color{green}{\varepsilon/R}$ (po $\color{green}{5\tau}$ praktycznie maksimum).

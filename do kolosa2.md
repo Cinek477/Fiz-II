@@ -26,14 +26,22 @@ Kirchhoff: napięcie na cewce + napięcie na kondensatorze = 0, a $\color{teal}{
 
 $$\color{royalblue} L\ddot q + \frac{q}{C} = 0 \;\Rightarrow\; \ddot q + \frac{1}{LC}q = 0$$
 
-$$\color{royalblue} \boxed{\color{orange}q(t) = q_0\cos(\omega_0 t),\quad I(t) = -q_0\omega_0\sin(\omega_0 t),\quad \omega_0 = \frac{1}{\sqrt{LC}}}$$
+$$\color{royalblue} \boxed{\color{orange}q(t) = q_0\cos(\omega_0 t)}$$
+
+$$\color{royalblue} \boxed{\color{orange}I(t) = -q_0\omega_0\sin(\omega_0 t)}$$
+
+$$\color{royalblue} \boxed{\color{orange}\omega_0 = \frac{1}{\sqrt{LC}}}$$
 
 > [!tip]
 > To oscylator harmoniczny, jak sprężyna. Energia przelewa się między kondensatorem (pole $\color{teal}{E}$) a cewką (pole $\color{teal}{B}$).
 
 **Potrzebne wzory do liczb:**
 
-$$\color{royalblue} L = \frac{\mu_0 N^2 S}{l},\qquad C = \frac{\varepsilon_0\varepsilon_r S}{d},\qquad f = \frac{\omega_0}{2\pi}$$
+$$\color{royalblue} L = \frac{\mu_0 N^2 S}{l}$$
+
+$$\color{royalblue} C = \frac{\varepsilon_0\varepsilon_r S}{d}$$
+
+$$\color{royalblue} f = \frac{\omega_0}{2\pi}$$
 
 > [!example] Przykład z zestawu
 > $\color{teal}{N = 100}$, $\color{teal}{l = 10\,\text{cm}}$, średnica $\color{teal}{0{,}4\,\text{cm}}$ → $\color{teal}{L \approx 1{,}58\,\mu\text{H}}$
@@ -53,15 +61,18 @@ $$\color{royalblue} L = \frac{\mu_0 N^2 S}{l},\qquad C = \frac{\varepsilon_0\var
 > - $A, B$ – stałe zależne od warunków początkowych
 
 
-$$\color{royalblue} L\ddot q + R\dot q + \frac{q}{C} = 0 \;\Rightarrow\; \ddot q + 2\beta\dot q + \omega_0^2 q = 0,\qquad \beta = \frac{R}{2L}$$
+$$\color{royalblue} L\ddot q + R\dot q + \frac{q}{C} = 0 \;\Rightarrow\; \ddot q + 2\beta\dot q + \omega_0^2 q = 0$$
+
+$$\color{royalblue} \beta = \frac{R}{2L}$$
 
 Zgadujemy $\color{green}{q = e^{\lambda t}}$ → $\color{green}{\lambda = -\beta \pm \sqrt{\beta^2 - \omega_0^2}}$
 
-| Przypadek | Warunek | Rozwiązanie |
-|---|---|---|
-| małe $R$ | $\color{green}{\beta < \omega_0}$ | $\color{orange}{q = q_0 e^{-\beta t}\cos(\omega t),\ \omega = \sqrt{\omega_0^2 - \beta^2}}$ |
-| krytyczne | $\color{green}{R = 2\sqrt{L/C}}$ | $\color{orange}{q = q_0(1 + \beta t)e^{-\beta t}}$ |
-| duże $R$ | $\color{green}{R > 2\sqrt{L/C}}$ | $\color{orange}{q = Ae^{\lambda_1 t} + Be^{\lambda_2 t}}$, bez drgań |
+| Przypadek | Warunek | Rozwiązanie | Oznaczenia |
+|---|---|---|---|
+| małe $R$ | $\color{green}{\beta < \omega_0}$ | $\color{orange}{q = q_0 e^{-\beta t}\cos(\omega t)}$ | $q_0$ – ładunek na początku, $\beta$ – tłumienie, $\omega$ – częstość drgań tłumionych |
+| małe $R$ – częstość | | $\color{orange}{\omega = \sqrt{\omega_0^2 - \beta^2}}$ | $\omega_0$ – częstość własna (bez oporu) |
+| krytyczne | $\color{green}{R = 2\sqrt{L/C}}$ | $\color{orange}{q = q_0(1 + \beta t)e^{-\beta t}}$ | $L$ – indukcyjność, $C$ – pojemność, $\beta$ – tłumienie |
+| duże $R$ | $\color{green}{R > 2\sqrt{L/C}}$ | $\color{orange}{q = Ae^{\lambda_1 t} + Be^{\lambda_2 t}}$, bez drgań | $\lambda_1, \lambda_2$ – pierwiastki równania, $A, B$ – stałe |
 
 ```mermaid
 %%{init: {"themeVariables": {"xyChart": {"plotColorPalette": "#2e86de"}}}}%%
@@ -89,7 +100,11 @@ $$\color{royalblue} L\frac{dI}{dt} + RI + \frac{q}{C} = U_0\sin(\Omega t)$$
 
 Po ustabilizowaniu prąd drga z częstotliwością **źródła**:
 
-$$\color{royalblue} \boxed{\color{orange}I_0 = \frac{U_0}{Z},\quad Z = \sqrt{R^2 + \left(\Omega L - \frac{1}{\Omega C}\right)^2},\quad \operatorname{tg}\varphi = \frac{\Omega L - \frac{1}{\Omega C}}{R}}$$
+$$\color{royalblue} \boxed{\color{orange}I_0 = \frac{U_0}{Z}}$$
+
+$$\color{royalblue} \boxed{\color{orange}Z = \sqrt{R^2 + \left(\Omega L - \frac{1}{\Omega C}\right)^2}}$$
+
+$$\color{royalblue} \boxed{\color{orange}\operatorname{tg}\varphi = \frac{\Omega L - \frac{1}{\Omega C}}{R}}$$
 
 - $\color{green}{\Omega < \omega_0}$ → przeważa kondensator → prąd **wyprzedza** napięcie
 - $\color{green}{\Omega > \omega_0}$ → przeważa cewka → prąd **spóźnia się**
@@ -110,12 +125,12 @@ $$\color{royalblue} \boxed{\color{orange}I_0 = \frac{U_0}{Z},\quad Z = \sqrt{R^2
 > - $\Delta x$ – przesunięcie odpowiadające zmianie fazy [m]
 
 
-| Wielkość | Wzór | Dla $k = 10^{10}\,\text{m}^{-1}$ |
-|---|---|---|
-| długość fali | $\color{crimson}{\lambda = 2\pi/k}$ | $\color{orange}{0{,}63\,\text{nm}}$ |
-| częstość | $\color{crimson}{\omega = ck}$ | $\color{orange}{3\cdot10^{18}\,\text{rad/s}}$ |
-| okres | $\color{crimson}{T = 2\pi/\omega}$ | $\color{orange}{2{,}1\cdot10^{-18}\,\text{s}}$ |
-| faza o $90^\circ$ | $\color{crimson}{\Delta x = \frac{\pi}{2k} = \frac{\lambda}{4}}$ | $\color{orange}{1{,}57\cdot10^{-10}\,\text{m}}$ |
+| Wielkość | Wzór | Dla $k = 10^{10}\,\text{m}^{-1}$ | Oznaczenia |
+|---|---|---|---|
+| długość fali | $\color{crimson}{\lambda = 2\pi/k}$ | $\color{orange}{0{,}63\,\text{nm}}$ | $\lambda$ – długość fali, $k$ – liczba falowa |
+| częstość | $\color{crimson}{\omega = ck}$ | $\color{orange}{3\cdot10^{18}\,\text{rad/s}}$ | $\omega$ – częstość kołowa, $c$ – prędkość światła |
+| okres | $\color{crimson}{T = 2\pi/\omega}$ | $\color{orange}{2{,}1\cdot10^{-18}\,\text{s}}$ | $T$ – okres, $\omega$ – częstość kołowa |
+| faza o $90^\circ$ | $\color{crimson}{\Delta x = \frac{\pi}{2k} = \frac{\lambda}{4}}$ | $\color{orange}{1{,}57\cdot10^{-10}\,\text{m}}$ | $\Delta x$ – przesunięcie, $\lambda$ – długość fali |
 
 ---
 
@@ -165,12 +180,12 @@ xychart-beta
 > - $\varepsilon_0, \mu_0$ – stałe próżni
 
 
-| | Całkowa | Różniczkowa | Po ludzku |
-|---|---|---|---|
-| I | $\color{mediumvioletred}{\oint \vec E\cdot d\vec S = \dfrac{Q}{\varepsilon_0}}$ | $\color{mediumvioletred}{\nabla\cdot\vec E = \dfrac{\rho}{\varepsilon_0}}$ | ładunki są źródłem $E$ |
-| II | $\color{mediumvioletred}{\oint \vec B\cdot d\vec S = 0}$ | $\color{mediumvioletred}{\nabla\cdot\vec B = 0}$ | brak „ładunków magnetycznych” |
-| III | $\color{mediumvioletred}{\oint \vec E\cdot d\vec l = -\dfrac{d\Phi_B}{dt}}$ | $\color{mediumvioletred}{\nabla\times\vec E = -\dfrac{\partial\vec B}{\partial t}}$ | zmienne $B$ robi wirowe $E$ |
-| IV | $\color{mediumvioletred}{\oint \vec B\cdot d\vec l = \mu_0 I + \mu_0\varepsilon_0\dfrac{d\Phi_E}{dt}}$ | $\color{mediumvioletred}{\nabla\times\vec B = \mu_0\vec j + \mu_0\varepsilon_0\dfrac{\partial\vec E}{\partial t}}$ | prąd i zmienne $E$ robią wirowe $B$ |
+| | Całkowa | Różniczkowa | Po ludzku | Oznaczenia |
+|---|---|---|---|---|
+| I | $\color{mediumvioletred}{\oint \vec E\cdot d\vec S = \dfrac{Q}{\varepsilon_0}}$ | $\color{mediumvioletred}{\nabla\cdot\vec E = \dfrac{\rho}{\varepsilon_0}}$ | ładunki są źródłem $E$ | $Q$ – ładunek w środku, $\rho$ – gęstość ładunku |
+| II | $\color{mediumvioletred}{\oint \vec B\cdot d\vec S = 0}$ | $\color{mediumvioletred}{\nabla\cdot\vec B = 0}$ | brak „ładunków magnetycznych” | $\vec B$ – pole magnetyczne, $d\vec S$ – kawałek powierzchni |
+| III | $\color{mediumvioletred}{\oint \vec E\cdot d\vec l = -\dfrac{d\Phi_B}{dt}}$ | $\color{mediumvioletred}{\nabla\times\vec E = -\dfrac{\partial\vec B}{\partial t}}$ | zmienne $B$ robi wirowe $E$ | $\Phi_B$ – strumień magnetyczny, $d\vec l$ – kawałek krzywej |
+| IV | $\color{mediumvioletred}{\oint \vec B\cdot d\vec l = \mu_0 I + \mu_0\varepsilon_0\dfrac{d\Phi_E}{dt}}$ | $\color{mediumvioletred}{\nabla\times\vec B = \mu_0\vec j + \mu_0\varepsilon_0\dfrac{\partial\vec E}{\partial t}}$ | prąd i zmienne $E$ robią wirowe $B$ | $I$ – prąd, $\vec j$ – gęstość prądu, $\Phi_E$ – strumień elektryczny |
 
 > [!info] Prąd przesunięcia
 > $\color{teal}{\varepsilon_0\frac{\partial\vec E}{\partial t}}$ – zmienne pole $E$ działa jak prąd (np. między okładkami kondensatora). Bez niego nie byłoby fal EM.
@@ -194,7 +209,9 @@ Tożsamość: $\color{green}{\nabla\times(\nabla\times\vec E) = \nabla(\nabla\cd
 2. Lewa strona: $\color{green}{\nabla\cdot\vec E = 0}$ w próżni → zostaje $\color{green}{-\nabla^2\vec E}$
 3. Prawa strona: wstawiamy IV równanie → $\color{green}{-\mu_0\varepsilon_0\frac{\partial^2\vec E}{\partial t^2}}$
 
-$$\color{royalblue} \boxed{\color{orange}\nabla^2\vec E = \mu_0\varepsilon_0\frac{\partial^2\vec E}{\partial t^2}},\qquad v = \frac{1}{\sqrt{\mu_0\varepsilon_0}} = c$$
+$$\color{royalblue} \boxed{\color{orange}\nabla^2\vec E = \mu_0\varepsilon_0\frac{\partial^2\vec E}{\partial t^2}}$$
+
+$$\color{royalblue} v = \frac{1}{\sqrt{\mu_0\varepsilon_0}} = c$$
 
 ---
 
@@ -207,7 +224,9 @@ $$\color{royalblue} \boxed{\color{orange}\nabla^2\vec E = \mu_0\varepsilon_0\fra
 > - $\varepsilon_r, \mu_r$ – przenikalności względne ośrodka
 
 
-$$\color{royalblue} \frac{\partial^2 E}{\partial x^2} = -k^2 E,\qquad \frac{\partial^2 E}{\partial t^2} = -\omega^2 E \;\Rightarrow\; k^2 = \mu_0\varepsilon_0\omega^2$$
+$$\color{royalblue} \frac{\partial^2 E}{\partial x^2} = -k^2 E$$
+
+$$\color{royalblue} \frac{\partial^2 E}{\partial t^2} = -\omega^2 E \;\Rightarrow\; k^2 = \mu_0\varepsilon_0\omega^2$$
 
 > [!success] Wniosek
 > Spełnia równanie, gdy $\color{teal}{v = \frac{\omega}{k} = c}$. W ośrodku $\color{teal}{v = \frac{c}{\sqrt{\varepsilon_r\mu_r}}}$ – prędkość zależy tylko od ośrodka.

@@ -20,13 +20,19 @@ Naładowany kondensator rozładowuje się przez cewkę → cewka „rozpędza”
 
 ### Kirchhoff
 Napięcie na cewce + napięcie na kondensatorze = 0:
-$$\color{royalblue} L\frac{dI}{dt} + \frac{q}{C} = 0,\qquad I = \frac{dq}{dt}$$
+$$\color{royalblue} L\frac{dI}{dt} + \frac{q}{C} = 0$$
+
+$$\color{royalblue} I = \frac{dq}{dt}$$
 $$\color{royalblue} \Rightarrow \ddot q + \frac{1}{LC}q = 0$$
 
 To jest równanie **oscylatora harmonicznego** (jak sprężyna: $\ddot x + \omega^2 x = 0$).
 
 ### Rozwiązanie
-$$\color{royalblue} q(t) = q_0\cos(\omega_0 t),\qquad I(t) = \dot q = -q_0\omega_0\sin(\omega_0 t),\qquad \omega_0 = \frac{1}{\sqrt{LC}}$$
+$$\color{royalblue} q(t) = q_0\cos(\omega_0 t)$$
+
+$$\color{royalblue} I(t) = \dot q = -q_0\omega_0\sin(\omega_0 t)$$
+
+$$\color{royalblue} \omega_0 = \frac{1}{\sqrt{LC}}$$
 
 ### Liczby
 **Cewka:** $N = 100$, $l = 0{,}1\,\text{m}$, średnica $0{,}4\,\text{cm}$ → $r = 0{,}002\,\text{m}$, $S = \pi r^2 = 1{,}26\cdot10^{-5}\,\text{m}^2$
@@ -36,7 +42,9 @@ $$\color{royalblue} L = \frac{\mu_0 N^2 S}{l} = \frac{4\pi\cdot10^{-7}\cdot10^4\
 $$\color{royalblue} C = \frac{\varepsilon_0\varepsilon_r S}{d} = \frac{8{,}85\cdot10^{-12}\cdot4\cdot10^{-4}}{5\cdot10^{-4}} \approx 7{,}1\cdot10^{-12}\ \text{F}$$
 
 **Częstość:**
-$$\color{royalblue} \omega_0 = \frac{1}{\sqrt{1{,}58\cdot10^{-6}\cdot7{,}1\cdot10^{-12}}} \approx 3\cdot10^{8}\ \text{rad/s},\qquad f = \frac{\omega_0}{2\pi} \approx 48\ \text{MHz}$$
+$$\color{royalblue} \omega_0 = \frac{1}{\sqrt{1{,}58\cdot10^{-6}\cdot7{,}1\cdot10^{-12}}} \approx 3\cdot10^{8}\ \text{rad/s}$$
+
+$$\color{royalblue} f = \frac{\omega_0}{2\pi} \approx 48\ \text{MHz}$$
 (zakres radiowy UKF)
 
 ---
@@ -55,14 +63,18 @@ $$\color{royalblue} \omega_0 = \frac{1}{\sqrt{1{,}58\cdot10^{-6}\cdot7{,}1\cdot1
 
 ### Kirchhoff
 $$\color{royalblue} L\ddot q + R\dot q + \frac{q}{C} = 0 \;\Rightarrow\; \ddot q + 2\beta\dot q + \omega_0^2 q = 0$$
-$$\color{royalblue} \beta = \frac{R}{2L}\ (\text{tłumienie}),\qquad \omega_0^2 = \frac{1}{LC}$$
+$$\color{royalblue} \beta = \frac{R}{2L}\ (\text{tłumienie})$$
+
+$$\color{royalblue} \omega_0^2 = \frac{1}{LC}$$
 
 ### Jak to rozwiązać?
 Zgadujemy $q = e^{\lambda t}$ → równanie charakterystyczne:
 $$\color{royalblue} \lambda^2 + 2\beta\lambda + \omega_0^2 = 0 \Rightarrow \lambda = -\beta \pm\sqrt{\beta^2 - \omega_0^2}$$
 
 ### Przypadek 1: małe $R$ ($\beta < \omega_0$) – drgania gasnące
-$$\color{royalblue} q(t) = q_0 e^{-\beta t}\cos(\omega t + \varphi),\quad \omega = \sqrt{\omega_0^2 - \beta^2}$$
+$$\color{royalblue} q(t) = q_0 e^{-\beta t}\cos(\omega t + \varphi)$$
+
+$$\color{royalblue} \omega = \sqrt{\omega_0^2 - \beta^2}$$
 Prąd: $I = \dot q$ – też sinusoida z malejącą amplitudą $\sim e^{-\beta t}$.
 > [!tip]
 > Huśtawka w miodzie: buja się, ale coraz słabiej.
@@ -77,7 +89,9 @@ xychart-beta
 ```
 
 ### Przypadek 2: duże $R$ ($\beta > \omega_0$, czyli $R > 2\sqrt{L/C}$) – brak drgań (przetłumienie)
-$$\color{royalblue} q(t) = A e^{\lambda_1 t} + B e^{\lambda_2 t},\quad \lambda_{1,2} < 0$$
+$$\color{royalblue} q(t) = A e^{\lambda_1 t} + B e^{\lambda_2 t}$$
+
+$$\color{royalblue} \lambda_{1,2} < 0$$
 > [!tip]
 > Kondensator po prostu powoli się rozładowuje, bez przechodzenia na drugą stronę.
 
@@ -149,7 +163,9 @@ plt.legend(); plt.xlabel("t [s]"); plt.show()
 ### Analiza (co powinno wyjść po ustabilizowaniu)
 - Na początku jest „bałagan” (stan przejściowy), potem prąd drga z częstotliwością **źródła**.
 - **Amplituda:**
-$$\color{royalblue} I_0 = \frac{U_0}{Z},\quad Z = \sqrt{R^2 + \left(\Omega L - \frac{1}{\Omega C}\right)^2}$$
+$$\color{royalblue} I_0 = \frac{U_0}{Z}$$
+
+$$\color{royalblue} Z = \sqrt{R^2 + \left(\Omega L - \frac{1}{\Omega C}\right)^2}$$
 - **Faza** (o ile prąd spóźnia się za napięciem):
 $$\color{royalblue} \tan\varphi = \frac{\Omega L - \frac{1}{\Omega C}}{R}$$
   - $\Omega < \omega_0$ → dominuje kondensator → prąd **wyprzedza** napięcie
@@ -277,7 +293,13 @@ Przykład: kondensator ładowany prądem – między okładkami **nie płyną el
 
 ### W próżni (fala EM)
 Brak ładunków i prądów: $\rho = 0$, $\vec j = 0$ (czyli $Q = 0$, $I = 0$). Zostaje:
-$$\color{royalblue} \nabla\cdot\vec E = 0,\quad \nabla\cdot\vec B = 0,\quad \nabla\times\vec E = -\frac{\partial\vec B}{\partial t},\quad \nabla\times\vec B = \mu_0\varepsilon_0\frac{\partial\vec E}{\partial t}$$
+$$\color{royalblue} \nabla\cdot\vec E = 0$$
+
+$$\color{royalblue} \nabla\cdot\vec B = 0$$
+
+$$\color{royalblue} \nabla\times\vec E = -\frac{\partial\vec B}{\partial t}$$
+
+$$\color{royalblue} \nabla\times\vec B = \mu_0\varepsilon_0\frac{\partial\vec E}{\partial t}$$
 
 ---
 
@@ -319,7 +341,9 @@ To jest równanie falowe $\nabla^2 f = \dfrac{1}{v^2}\dfrac{\partial^2 f}{\parti
 
 $E$ zależy tylko od $x$ i $t$, więc $\nabla^2 E = \dfrac{\partial^2 E}{\partial x^2}$.
 
-$$\color{royalblue} \frac{\partial^2 E}{\partial x^2} = -k^2 E_0\sin(\omega t - kx),\qquad \frac{\partial^2 E}{\partial t^2} = -\omega^2 E_0\sin(\omega t - kx)$$
+$$\color{royalblue} \frac{\partial^2 E}{\partial x^2} = -k^2 E_0\sin(\omega t - kx)$$
+
+$$\color{royalblue} \frac{\partial^2 E}{\partial t^2} = -\omega^2 E_0\sin(\omega t - kx)$$
 
 Wstawiamy:
 $$\color{royalblue} -k^2 E = \mu_0\varepsilon_0(-\omega^2 E) \Rightarrow k^2 = \mu_0\varepsilon_0\omega^2$$

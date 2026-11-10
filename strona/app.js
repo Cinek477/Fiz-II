@@ -59,11 +59,15 @@ document.addEventListener("keydown",e=>{if(view!=="fiszki")return;if(e.target.cl
 build();
 
 /* ---------- Notatki (markdown + KaTeX + callouty + wykresy) ---------- */
-const SOFT={orange:"#c08a4e",darkorange:"#b97a3f",royalblue:"#5b7fa6",teal:"#4f8a85",crimson:"#b5605a",purple:"#8a6b9c",green:"#5f8a5e",mediumvioletred:"#a65f86",gray:"#8a867d"};
+/* Kolory wzorów: jaśniejsze w ciemnym motywie, ciemniejsze w jasnym (żeby był dobry kontrast) */
+const SOFT_DARK={orange:"#f2a65a",darkorange:"#eba062",royalblue:"#8ab8ff",teal:"#5fd0c0",crimson:"#ff8f8f",purple:"#c4a3ff",green:"#7fd99a",mediumvioletred:"#f08cc8",gray:"#a9b8cc"};
+const SOFT_LIGHT={orange:"#c2410c",darkorange:"#b45309",royalblue:"#1d5fe0",teal:"#0f766e",crimson:"#b91c1c",purple:"#7c3aed",green:"#15803d",mediumvioletred:"#a21caf",gray:"#475569"};
+const isDark=()=>{const t=document.documentElement.dataset.theme;return t?t==="dark":matchMedia("(prefers-color-scheme: dark)").matches};
 const NOTES=[["k1","Ściąga – kolos 1"],["k2","Ściąga – kolos 2"],["z1","Zestaw 1 – rozwiązania"],["z2","Zestaw 2 – rozwiązania"]];
 let notesData=null, noteSel=store.get("fiszki-note","k1"), mermaidReady=false, chartId=0;
 function mdToHtml(src){
-  src=src.replace(/\\color\{([a-z]+)\}/g,(m,c)=>SOFT[c]?"\\color{"+SOFT[c]+"}":m);
+  const PAL=isDark()?SOFT_DARK:SOFT_LIGHT;
+  src=src.replace(/\\color\{([a-z]+)\}/g,(m,c)=>PAL[c]?"\\color{"+PAL[c]+"}":m);
   const math=[];
   // chroń bloki kodu przed wycinaniem matmy
   const code=[];src=src.replace(/```[\s\S]*?```/g,m=>{code.push(m);return "\u0000C"+(code.length-1)+"\u0000"});
@@ -76,7 +80,12 @@ function mdToHtml(src){
   return html;
 }
 function enhance(root){
-  root.querySelectorAll("table").forEach(t=>{const w=document.createElement("div");w.className="tbl";t.replaceWith(w);w.appendChild(t)});
+  root.querySelectorAll("table").forEach(t=>{
+    const heads=[...t.querySelectorAll("thead th")].map(th=>th.textContent.trim());
+    // podpisy kolumn do widoku „kart” na telefonie
+    t.querySelectorAll("tbody tr").forEach(tr=>[...tr.children].forEach((td,i)=>td.dataset.label=heads[i]||""));
+    if(heads[heads.length-1]==="Oznaczenia")t.classList.add("legend-tbl");
+    const w=document.createElement("div");w.className="tbl";t.replaceWith(w);w.appendChild(t)});
   root.querySelectorAll("blockquote").forEach(bq=>{const p=bq.querySelector("p");if(!p)return;
     const m=p.innerHTML.match(/^\[!(\w+)\]([^\n<]*)(?:\n|<br>)?/);if(!m)return;
     const type=m[1].toLowerCase(), label=m[2].trim()||({tip:"Wskazówka",info:"Info",warning:"Uwaga",success:"Sprawdzenie",example:"Przykład"}[type]||type);

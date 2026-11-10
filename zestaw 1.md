@@ -213,7 +213,9 @@ $$\color{royalblue} I = \frac{2RB}{\mu_0} = \frac{2\cdot0{,}2\cdot5\cdot10^{-5}}
 ### Krok 1 – strumień przez ramkę
 Ramka się kręci, więc kąt między polem a ramką zmienia się:
 
-$$\color{royalblue} \Phi(t) = BA\cos(\omega t),\qquad A = a^2 = 1{,}6\cdot10^{-3}\ \text{m}^2$$
+$$\color{royalblue} \Phi(t) = BA\cos(\omega t)$$
+
+$$\color{royalblue} A = a^2 = 1{,}6\cdot10^{-3}\ \text{m}^2$$
 
 ### Krok 2 – SEM (prawo Faradaya: napięcie = minus szybkość zmiany strumienia)
 $$\color{royalblue} \varepsilon(t) = -\frac{d\Phi}{dt} = B A \omega \sin(\omega t)$$
@@ -292,7 +294,9 @@ $$\color{royalblue} \frac{dI}{\varepsilon/R - I} = \frac{R}{L}dt \Rightarrow -\l
 
 Warunek: $I(0) = 0$ (cewka „nie lubi” nagłych zmian prądu):
 
-$$\color{royalblue} \boxed{\color{orange}I(t) = \frac{\varepsilon}{R}\left(1 - e^{-t/\tau}\right),\quad \tau = \frac{L}{R}}$$
+$$\color{royalblue} \boxed{\color{orange}I(t) = \frac{\varepsilon}{R}\left(1 - e^{-t/\tau}\right)}$$
+
+$$\color{royalblue} \boxed{\color{orange}\tau = \frac{L}{R}}$$
 
 > [!tip]
 > Prąd rośnie od 0 do $\color{teal}{\varepsilon/R}$ jak „nasycanie się”; po czasie $\color{teal}{\tau}$ jest ok. 63% maksimum, po $\color{teal}{5\tau}$ praktycznie 100%.

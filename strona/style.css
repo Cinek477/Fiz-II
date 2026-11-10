@@ -102,3 +102,26 @@ section{display:flex;flex-direction:column;gap:18px}
 .callout.note ul{margin:.2em 0 .1em;padding-left:1.1em;display:grid;gap:3px;font-size:.95rem}
 .callout.note li{max-width:none;color:var(--muted)}
 .callout.note li .katex{color:var(--fg)}
+/* czytelniejsze tabele */
+main:has(#v-wzory:not([hidden])),main:has(#v-notatki:not([hidden])){max-width:1000px}
+.doc .tbl{border:1px solid var(--line);border-radius:14px;overflow-x:auto;margin:1.2em 0}
+.doc table{width:100%;border-collapse:collapse;font-size:.97rem;line-height:1.5}
+.doc th,.doc td{border:0;border-bottom:1px solid var(--line);padding:11px 14px;text-align:left;vertical-align:middle}
+.doc tr:last-child td{border-bottom:0}
+.doc th{background:var(--surface);font-family:var(--mono);font-size:.74rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.doc tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--surface) 55%,transparent)}
+.doc td:first-child{font-weight:600}
+.doc td .katex{font-size:1.08em}
+.legend-tbl td:last-child{color:var(--muted);font-size:.86rem;line-height:1.55;min-width:230px;max-width:340px}
+.legend-tbl td:last-child .katex{font-size:1em;color:var(--fg)}
+.legend-tbl td:not(:first-child):not(:last-child){white-space:nowrap}
+@media (max-width:720px){
+  .legend-tbl,.legend-tbl tbody,.legend-tbl tr,.legend-tbl td{display:block;width:auto}
+  .legend-tbl thead{display:none}
+  .legend-tbl tr{padding:12px 14px;border-bottom:1px solid var(--line)}
+  .legend-tbl tr:last-child{border-bottom:0}
+  .legend-tbl td{border:0;padding:3px 0;background:none!important;max-width:none;white-space:normal!important;overflow-x:auto}
+  .legend-tbl td:empty{display:none}
+  .legend-tbl td:not(:first-child)::before{content:attr(data-label);display:block;font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+}
+@media (max-width:720px){.legend-tbl td{overflow-y:hidden;scrollbar-width:none}.legend-tbl td::-webkit-scrollbar{display:none}}
