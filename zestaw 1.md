@@ -7,6 +7,15 @@
 
 ## Zadanie 1 – Zasilacz z oporem wewnętrznym + zmienny rezystor
 
+> [!note] Oznaczenia
+> - $\varepsilon$ – siła elektromotoryczna (SEM) zasilacza, czyli napięcie „bez obciążenia” [V]
+> - $r$ – opór wewnętrzny zasilacza (ukryty w środku) [Ω]
+> - $R_z$ – opór zmiennego rezystora, czyli obciążenia [Ω]
+> - $I$ – natężenie prądu płynącego w obwodzie [A]
+> - $V$ – napięcie na obciążeniu (to, co „dociera” do odbiornika) [V]
+> - $P$ – moc użyteczna, wydzielana na obciążeniu [W]
+
+
 ### Co tu się dzieje?
 Każda bateria/zasilacz ma w środku „ukryty” opornik $r$. Prąd płynie w kółko: przez $r$ (w środku zasilacza) i przez $R_z$ (na zewnątrz). Część napięcia „gubi się” w środku.
 
@@ -61,6 +70,21 @@ xychart-beta
 
 ## Zadanie 2 – Prędkość unoszenia elektronów w miedzi
 
+> [!note] Oznaczenia
+> - $L$ – długość drutu [m]
+> - $S$ – pole przekroju drutu [m²]
+> - $U$ – napięcie skuteczne przyłożone do drutu [V]
+> - $f$ – częstotliwość prądu [Hz], $\omega = 2\pi f$ – częstość kołowa [rad/s]
+> - $\rho$ – rezystywność (opór właściwy) miedzi [Ω·m]
+> - $\sigma = 1/\rho$ – przewodność właściwa [S/m]
+> - $n$ – koncentracja elektronów swobodnych (ile ich jest w 1 m³) [m⁻³]
+> - $e$ – ładunek elementarny, $1{,}6\cdot10^{-19}\,\text{C}$
+> - $E$ – natężenie pola elektrycznego w drucie [V/m]
+> - $\mu$ – ruchliwość elektronów (jak łatwo pole je „pcha”) [m²/(V·s)]
+> - $v$ – prędkość unoszenia (dryfu) elektronów [m/s], $v_0$ – jej amplituda
+> - $T$ – okres prądu [s], $s$ – droga elektronu w pół okresu [m]
+
+
 > [!info] Dane
 > $\color{teal}{L = 10\,\text{m}}$, $\color{teal}{S = 2{,}5\,\text{mm}^2 = 2{,}5\cdot10^{-6}\,\text{m}^2}$, $\color{teal}{U = 250\,\text{V}}$ (skuteczne), $\color{teal}{f = 50\,\text{Hz}}$, $\color{teal}{\rho = 1{,}7\,\mu\Omega\cdot\text{cm} = 1{,}7\cdot10^{-8}\,\Omega\cdot\text{m}}$.
 
@@ -99,6 +123,19 @@ $$\color{royalblue} s = \int_0^{T/2} v_0 \sin(\omega t)\,dt = \frac{2 v_0}{\omeg
 
 ## Zadanie 3 – Hallotron (półprzewodnik w polu magnetycznym)
 
+> [!note] Oznaczenia
+> - $w$ – szerokość płytki, $d$ – grubość płytki [m]
+> - $S = w\cdot d$ – przekrój, przez który płynie prąd [m²]
+> - $I$ – prąd płynący przez płytkę [A]
+> - $B$ – indukcja pola magnetycznego [T]
+> - $n$ – koncentracja nośników prądu [m⁻³]
+> - $\sigma$ – przewodność właściwa [(Ω·m)⁻¹]
+> - $v$ – prędkość nośników [m/s]
+> - $F$ – siła Lorentza działająca na jeden nośnik [N]
+> - $\mu$ – ruchliwość nośników [m²/(V·s)]
+> - $U_H$ – napięcie Halla (powstaje w poprzek płytki) [V]
+
+
 > [!info] Dane
 > długość $\color{teal}{1\,\text{cm}}$, szerokość $\color{teal}{w = 4\,\text{mm}}$, grubość $\color{teal}{d = 1\,\text{mm}}$, $\color{teal}{I = 10\,\text{mA}}$, $\color{teal}{B = 0{,}5\,\text{T}}$, $\color{teal}{n = 10^{22}\,\text{m}^{-3}}$, $\color{teal}{\sigma = 120\,(\Omega\cdot\text{m})^{-1}}$.
 
@@ -127,6 +164,16 @@ $U_H \sim \dfrac{1}{n}$. W metalu $n \approx 10^{29}\,\text{m}^{-3}$, w półprz
 
 ## Zadanie 4 – Pole w środku pętli (Biot–Savart)
 
+> [!note] Oznaczenia
+> - $\mu_0 = 4\pi\cdot10^{-7}\,\text{H/m}$ – przenikalność magnetyczna próżni (stała)
+> - $I$ – prąd w pętli [A]
+> - $dl$ – mały kawałek drutu [m]
+> - $r$ – odległość od kawałka drutu do punktu, w którym liczymy pole [m]
+> - $\alpha$ – kąt między kawałkiem drutu a kierunkiem do tego punktu
+> - $R$ – promień pętli [m]
+> - $B$ – indukcja pola magnetycznego [T]
+
+
 ### Wzór Biota–Savarta
 Kawałek drutu $dl$ z prądem $I$ robi w odległości $r$ pole:
 
@@ -147,6 +194,18 @@ $$\color{royalblue} I = \frac{2RB}{\mu_0} = \frac{2\cdot0{,}2\cdot5\cdot10^{-5}}
 ---
 
 ## Zadanie 5 – Wirująca ramka (prądnica)
+
+> [!note] Oznaczenia
+> - $a$ – bok kwadratowej ramki [m], $A = a^2$ – pole ramki [m²]
+> - $S$ – pole przekroju drutu [m²], $l = 4a$ – długość drutu [m]
+> - $\rho$ – rezystywność stali [Ω·m]
+> - $B$ – indukcja pola magnetycznego [T]
+> - $\omega$ – prędkość kątowa obrotu ramki [rad/s]
+> - $\Phi$ – strumień pola magnetycznego przez ramkę [Wb]
+> - $\varepsilon(t)$ – SEM indukowana w ramce, $\varepsilon_0$ – jej amplituda [V]
+> - $R$ – opór ramki [Ω], $I_0$ – maksymalny prąd [A]
+> - $\bar P$ – średnia moc wydzielana jako ciepło [W]
+
 
 > [!info] Dane
 > $\color{teal}{a = 4\,\text{cm}}$, $\color{teal}{S_{drutu} = 1\,\text{mm}^2 = 10^{-6}\,\text{m}^2}$, $\color{teal}{\rho = 10\,\mu\Omega\cdot\text{cm} = 10^{-7}\,\Omega\cdot\text{m}}$, $\color{teal}{B = 0{,}5\,\text{T}}$, $\color{teal}{\omega = 300\,\text{rad/s}}$.
@@ -177,6 +236,18 @@ $$\color{royalblue} \bar P = \frac{\varepsilon_0^2}{2R} = \frac{0{,}0576}{0{,}03
 
 ## Zadanie 6 – Cewka (solenoid) z prawa Ampère'a
 
+> [!note] Oznaczenia
+> - $N$ – liczba zwojów cewki
+> - $D$ – długość cewki [m]
+> - $S$ – pole przekroju cewki [m²]
+> - $I$ – prąd płynący przez cewkę [A], $I_0$ – amplituda prądu przemiennego
+> - $B$ – indukcja pola wewnątrz cewki [T]
+> - $\Phi$ – strumień pola przez wszystkie zwoje [Wb]
+> - $L$ – indukcyjność cewki [H]
+> - $\omega$ – częstość kołowa prądu [rad/s]
+> - $U$ – napięcie indukowane na cewce [V]
+
+
 ### Prawo Ampère'a
 $$\color{royalblue} \oint \vec B\cdot d\vec l = \mu_0 I_{obj}$$
 
@@ -204,6 +275,14 @@ $$\color{royalblue} U = -L\frac{dI}{dt} = -L I_0 \omega \cos(\omega t)$$
 ---
 
 ## Zadanie 7 – Włączanie cewki RL do źródła $\varepsilon$
+
+> [!note] Oznaczenia
+> - $\varepsilon$ – SEM źródła [V]
+> - $R$ – opór cewki [Ω]
+> - $L$ – indukcyjność cewki [H]
+> - $I(t)$ – prąd w chwili $t$ [A]
+> - $\tau = L/R$ – stała czasowa: po tym czasie prąd ma ok. 63% maksimum [s]
+
 
 ### Kirchhoff
 $$\color{royalblue} \varepsilon = IR + L\frac{dI}{dt}$$

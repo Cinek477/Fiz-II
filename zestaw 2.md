@@ -4,6 +4,17 @@
 
 ## Zadanie 1 – Obwód LC (idealny, bez oporu)
 
+> [!note] Oznaczenia
+> - $L$ – indukcyjność cewki [H], $C$ – pojemność kondensatora [F]
+> - $q$ – ładunek na kondensatorze [C], $q_0$ – ładunek na początku
+> - $I = \dot q$ – prąd (pochodna ładunku po czasie) [A]
+> - $\omega_0$ – częstość kołowa drgań własnych [rad/s], $f$ – częstotliwość [Hz]
+> - $N$ – liczba zwojów, $l$ – długość cewki, $r$ – promień cewki, $S$ – przekrój cewki
+> - $d$ – grubość izolatora (odległość okładek), $S$ – pole okładki kondensatora
+> - $\varepsilon_0 = 8{,}85\cdot10^{-12}\,\text{F/m}$ – przenikalność elektryczna próżni
+> - $\varepsilon_r$ – przenikalność względna izolatora (ile razy lepszy niż próżnia)
+
+
 ### Co się dzieje?
 Naładowany kondensator rozładowuje się przez cewkę → cewka „rozpędza” prąd → prąd ładuje kondensator w drugą stronę → i tak w kółko. Jak **huśtawka**: energia przelewa się między kondensatorem (pole E) a cewką (pole B).
 
@@ -31,6 +42,16 @@ $$\color{royalblue} \omega_0 = \frac{1}{\sqrt{1{,}58\cdot10^{-6}\cdot7{,}1\cdot1
 ---
 
 ## Zadanie 2 – Obwód RLC (z oporem, gasnące drgania)
+
+> [!note] Oznaczenia
+> - $R$ – opór cewki [Ω], $L$ – indukcyjność [H], $C$ – pojemność [F]
+> - $q$ – ładunek, $\dot q$ – prąd, $\ddot q$ – szybkość zmiany prądu
+> - $\beta = R/(2L)$ – współczynnik tłumienia: jak szybko drgania gasną [1/s]
+> - $\omega_0 = 1/\sqrt{LC}$ – częstość drgań bez oporu [rad/s]
+> - $\omega$ – częstość drgań tłumionych (trochę mniejsza niż $\omega_0$) [rad/s]
+> - $\lambda$ – pierwiastki równania charakterystycznego
+> - $A, B, \varphi$ – stałe zależne od warunków początkowych
+
 
 ### Kirchhoff
 $$\color{royalblue} L\ddot q + R\dot q + \frac{q}{C} = 0 \;\Rightarrow\; \ddot q + 2\beta\dot q + \omega_0^2 q = 0$$
@@ -68,6 +89,16 @@ $$\color{royalblue} q(t) = q_0(1 + \beta t)e^{-\beta t}$$
 ---
 
 ## Zadanie 3* – Symulator RLC z wymuszeniem
+
+> [!note] Oznaczenia
+> - $U_0$ – amplituda napięcia źródła [V]
+> - $\Omega$ – częstość kołowa źródła (wymuszenia) [rad/s]
+> - $Z$ – impedancja, czyli „opór zastępczy” całego obwodu [Ω]
+> - $I_0$ – amplituda prądu po ustabilizowaniu [A]
+> - $\varphi$ – przesunięcie fazowe prądu względem napięcia
+> - $\omega_0 = 1/\sqrt{LC}$ – częstość rezonansowa [rad/s]
+> - $\Delta t$ – krok czasu w symulacji [s]
+
 
 ### Równanie
 $$\color{royalblue} L\frac{dI}{dt} + RI + \frac{q}{C} = U_0\sin(\Omega t)$$
@@ -131,6 +162,16 @@ Wykonaj symulację dla kilku $f$ i narysuj $I_0(f)$ – wyjdzie krzywa rezonanso
 
 ## Zadanie 4 – Fala rentgenowska
 
+> [!note] Oznaczenia
+> - $E_0$ – amplituda pola elektrycznego [V/m]
+> - $k$ – wektor falowy (liczba falowa) [m⁻¹]
+> - $x$ – położenie [m], $t$ – czas [s]
+> - $\lambda$ – długość fali [m]
+> - $\omega$ – częstość kołowa [rad/s], $T$ – okres [s]
+> - $c = 3\cdot10^{8}\,\text{m/s}$ – prędkość światła
+> - $\Delta x$ – przesunięcie, o które zmienia się faza [m]
+
+
 $E = E_0\sin(kx - \omega t)$, $k = 10^{10}\,\text{m}^{-1}$.
 
 | Wielkość | Wzór | Wynik |
@@ -146,6 +187,15 @@ $E = E_0\sin(kx - \omega t)$, $k = 10^{10}\,\text{m}^{-1}$.
 ---
 
 ## Zadanie 5 – Pole naładowanej kuli (prawo Gaussa)
+
+> [!note] Oznaczenia
+> - $\rho$ – gęstość objętościowa ładunku (ładunek na 1 m³) [C/m³]
+> - $R$ – promień kuli [m], $r$ – odległość od środka kuli [m]
+> - $Q_{wewn}$ – ładunek wewnątrz wybranej sfery Gaussa [C]
+> - $E$ – natężenie pola elektrycznego [V/m]
+> - $d\vec S$ – mały kawałek powierzchni (wektor prostopadły do niej)
+> - $\varepsilon_0$ – przenikalność elektryczna próżni
+
 
 ### Prawo Gaussa
 $$\color{royalblue} \oint \vec E\cdot d\vec S = \frac{Q_{wewn}}{\varepsilon_0}$$
@@ -176,6 +226,14 @@ xychart-beta
 
 ## Zadanie 6 – Dywergencja i rotacja tego pola
 
+> [!note] Oznaczenia
+> - $E_r$ – składowa pola skierowana od środka (radialna)
+> - $E_\theta, E_\varphi$ – składowe „boczne” (tu równe 0)
+> - $\nabla\cdot\vec E$ – dywergencja: czy w danym miejscu pole ma źródło (ładunek)
+> - $\nabla\times\vec E$ – rotacja: czy pole „kręci się w kółko”
+> - $\theta, \varphi$ – kąty w układzie sferycznym
+
+
 Pole ma tylko składową radialną $E_r(r)$. W układzie sferycznym:
 $$\color{royalblue} \nabla\cdot\vec E = \frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2 E_r\right)$$
 
@@ -197,6 +255,15 @@ $$\color{royalblue} \nabla\times\vec E = 0\quad \text{(wewnątrz i na zewnątrz)
 
 ## Zadanie 7 – Równania Maxwella
 
+> [!note] Oznaczenia
+> - $\vec E$ – pole elektryczne [V/m], $\vec B$ – pole magnetyczne [T]
+> - $\rho$ – gęstość ładunku [C/m³], $\vec j$ – gęstość prądu [A/m²]
+> - $Q$ – ładunek [C], $I$ – prąd [A]
+> - $\Phi_E, \Phi_B$ – strumienie pola elektrycznego i magnetycznego
+> - $d\vec S$ – kawałek powierzchni, $d\vec l$ – kawałek krzywej
+> - $\varepsilon_0, \mu_0$ – stałe próżni (elektryczna i magnetyczna)
+
+
 | # | Całkowa | Różniczkowa | Po ludzku |
 |---|---|---|---|
 | I (Gauss E) | $\oint \vec E\cdot d\vec S = \dfrac{Q}{\varepsilon_0}$ | $\nabla\cdot\vec E = \dfrac{\rho}{\varepsilon_0}$ | ładunki są źródłami pola E |
@@ -215,6 +282,13 @@ $$\color{royalblue} \nabla\cdot\vec E = 0,\quad \nabla\cdot\vec B = 0,\quad \nab
 ---
 
 ## Zadanie 8 – Wyprowadzenie równania falowego
+
+> [!note] Oznaczenia
+> - $\nabla\times$ – rotacja, $\nabla\cdot$ – dywergencja
+> - $\nabla^2$ – laplasjan: suma drugich pochodnych po $x, y, z$
+> - $\vec A, \vec B, \vec C$ – dowolne wektory w tożsamości
+> - $v$ – prędkość fali [m/s], $c$ – prędkość światła
+
 
 Tożsamość: $\vec A\times(\vec B\times\vec C) = \vec B(\vec A\cdot\vec C) - \vec C(\vec A\cdot\vec B)$, dla nabli:
 $$\color{royalblue} \nabla\times(\nabla\times\vec E) = \nabla(\nabla\cdot\vec E) - \nabla^2\vec E$$
@@ -236,6 +310,13 @@ To jest równanie falowe $\nabla^2 f = \dfrac{1}{v^2}\dfrac{\partial^2 f}{\parti
 
 ## Zadanie 9 – Czy $\vec E = \hat j E_0\sin(\omega t - kx)$ spełnia równanie falowe?
 
+> [!note] Oznaczenia
+> - $\hat j$ – wektor jednostkowy osi $y$ (pole E drga wzdłuż $y$)
+> - $E_0$ – amplituda [V/m], $\omega$ – częstość kołowa, $k$ – liczba falowa
+> - $v = \omega/k$ – prędkość fali [m/s]
+> - $\varepsilon_r, \mu_r$ – przenikalności względne ośrodka (w próżni równe 1)
+
+
 $E$ zależy tylko od $x$ i $t$, więc $\nabla^2 E = \dfrac{\partial^2 E}{\partial x^2}$.
 
 $$\color{royalblue} \frac{\partial^2 E}{\partial x^2} = -k^2 E_0\sin(\omega t - kx),\qquad \frac{\partial^2 E}{\partial t^2} = -\omega^2 E_0\sin(\omega t - kx)$$
@@ -252,6 +333,13 @@ W ośrodku: $v = \dfrac{1}{\sqrt{\mu_0\mu_r\varepsilon_0\varepsilon_r}} = \dfrac
 ---
 
 ## Zadanie 10 – Pole B dla $\vec E = \hat j E_0\sin(\omega t - kx)$
+
+> [!note] Oznaczenia
+> - $\hat i, \hat j, \hat k$ – wektory jednostkowe osi $x, y, z$
+> - $E_y$ – składowa pola elektrycznego, $B_z$ – składowa pola magnetycznego
+> - $B_0 = E_0/c$ – amplituda pola magnetycznego [T]
+> - $\vec S$ – wektor Poyntinga: ile energii fala niesie przez 1 m² w 1 s [W/m²]
+
 
 **Krok 1. Rotacja E.** Jest tylko $E_y(x,t)$:
 $$\color{royalblue} \nabla\times\vec E = \hat k\,\frac{\partial E_y}{\partial x} = \hat k\,(-kE_0\cos(\omega t - kx))$$

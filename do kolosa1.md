@@ -11,6 +11,16 @@
 
 ## 1. Zadanie z kolosa (płytka) – pełne rozwiązanie
 
+> [!note] Oznaczenia
+> - $l$ – długość płytki (wzdłuż prądu), $d$ – szerokość, $h$ – grubość [m]
+> - $S = d\cdot h$ – przekrój prostopadły do prądu [m²]
+> - $\rho$ – rezystywność miedzi [Ω·m], $\rho_m$ – gęstość miedzi [kg/m³]
+> - $M$ – masa molowa [kg/mol], $N_A$ – liczba Avogadra
+> - $j$ – gęstość prądu [A/m²], $I$ – prąd [A], $U$ – napięcie [V], $R$ – opór [Ω]
+> - $n$ – liczba elektronów swobodnych w 1 m³ [m⁻³], $e$ – ładunek elementarny
+> - $v$ – prędkość dryfu elektronów [m/s]
+
+
 > [!info] Dane
 > $\color{teal}{l = 100\,\mu\text{m} = 10^{-4}\,\text{m}}$, $\color{teal}{d = 30\,\mu\text{m} = 3\cdot10^{-5}\,\text{m}}$, $\color{teal}{h = 5\,\text{nm} = 5\cdot10^{-9}\,\text{m}}$, $\color{teal}{j = 10^{12}\,\text{A/m}^2}$.
 

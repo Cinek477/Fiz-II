@@ -97,3 +97,8 @@ section{display:flex;flex-direction:column;gap:18px}
 @keyframes flipOut{from{transform:perspective(900px) rotateY(0)}to{transform:perspective(900px) rotateY(90deg)}}
 @keyframes flipIn{from{transform:perspective(900px) rotateY(-90deg)}to{transform:perspective(900px) rotateY(0)}}
 @media (prefers-reduced-motion:reduce){.card.flip-out,.card.flip-in{animation:none}}
+/* ramka „Oznaczenia” w zadaniach */
+.callout.note{--c:var(--c-info)}
+.callout.note ul{margin:.2em 0 .1em;padding-left:1.1em;display:grid;gap:3px;font-size:.95rem}
+.callout.note li{max-width:none;color:var(--muted)}
+.callout.note li .katex{color:var(--fg)}
