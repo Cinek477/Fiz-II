@@ -2,6 +2,8 @@
 
 Materiały do nauki na kolokwia z Fizyki II (Informatyka, AGH): rozwiązania zestawów zadań, ściągi, karta wzorów i strona z fiszkami.
 
+**🌐 Strona: [cinek477.github.io/Fiz-II](https://cinek477.github.io/Fiz-II/)**
+
 ## Zawartość
 
 | Plik / folder | Co to jest |
